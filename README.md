@@ -42,3 +42,70 @@ This dataset contains a collection of Bitcoin transaction records associated wit
   - `0` for legitimate transactions (originally labeled as `white`)
 
 This dataset offers a valuable real-world use case for applying machine learning in digital forensics and cryptocurrency transaction analysis.
+
+## Models
+
+The following machine learning models were developed and evaluated in this project:
+### Individual Models:
+- **Decision Tree Classifier**
+- **Random Forest Classifier**
+- **XGBoost (Extreme Gradient Boosting) Classifier**
+- **LightGBM (Light Gradient Boosting Machine) Classifier**
+- **CatBoost Classifier**
+
+### Ensemble Models:
+
+- **Ensemble Model 1:**  
+  Base learners: `CatBoostClassifier`, `LGBMClassifier`, `RandomForestClassifier`, and `XGBClassifier`  
+  Meta learner: `CatBoostClassifier`
+
+- **Ensemble Model 2:**  
+  Base learners: `CatBoostClassifier`, `LGBMClassifier`, `RandomForestClassifier`, and `XGBClassifier`  
+  Meta learner: `Logistic Regression`
+
+- **Ensemble Model 3:**  
+  Base learners: `CatBoostClassifier`, `LGBMClassifier`, `RandomForestClassifier`, `ExtraTreesClassifier`, `MLPClassifier` (multi-layer perceptron neural network), and `Logistic Regression`  
+  Meta learner: `CatBoostClassifier`
+
+- **Ensemble Model 4:**  
+  Base learners: `CatBoostClassifier`, `LGBMClassifier`, `RandomForestClassifier`, `ExtraTreesClassifier`, and `MLPClassifier`  
+  Meta learner: `CatBoostClassifier`
+
+---
+
+**Notes:**  
+All ensemble models were built using the stacking technique, where multiple base learners are trained independently and their predictions are combined by a meta-learner to make the final decision.
+
+## Results
+The evaluation process was divided into two stages: a model comparison phase and a final performance assessment of the selected model.
+
+### Model Comparison on the Validation Set
+
+Multiple machine learning models were trained and evaluated on a validation set using six key performance metrics:
+- **Precision**
+- **Recall**
+- **F1-Score**
+- **AUC-ROC**
+- **PR AUC (Area Under the Precision-Recall Curve)**
+- **Inference Time**
+
+A series of comparison charts were created to visualize the performance of each model across these metrics.  
+
+**Highlights:**
+- **Ensemble Model 4** consistently outperformed other individual and ensemble models in terms of precision, recall, F1-score, AUC-ROC, and PR AUC, while maintaining a reasonable inference time.
+- As a result, **Ensemble Model 4** was selected as the final model for further evaluation.
+
+### Final Model Performance on the Test Set
+
+The selected **Ensemble Model 4** was then tested on an unseen test set to assess its real-world performance.  
+
+Performance visualization included:
+- A **confusion matrix** showing true positives, true negatives, false positives, and false negatives.
+- **Precision-Recall (PR) curve**
+- **ROC curve**
+- Bar charts summarizing Precision, Recall, F1-score, AUC-ROC, PR AUC, and Inference Time.
+
+**Summary:**
+- The final model maintained high precision and recall on the test set, confirming its ability to accurately detect ransomware-related Bitcoin transactions while minimizing false alarms.
+- The PR AUC and ROC AUC scores further validated the robustness of the model under class imbalance conditions.
+
