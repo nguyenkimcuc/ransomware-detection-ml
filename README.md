@@ -104,12 +104,23 @@ Performance visualization included:
   ![image](https://github.com/user-attachments/assets/9aa7ff19-4978-4e6a-bf57-6e6ab3b8e711)
 
 - Classification Report:
+  
   ![image](https://github.com/user-attachments/assets/0dd2cf88-29b6-4fa3-840b-cdddeac3510f)
 
-- **Precision-Recall (PR) curve**
+- **Precision-Recall (PR) curve**:
+  
   ![image](https://github.com/user-attachments/assets/3ee86abc-44c7-4b18-a6b3-e0825e30c1d6)
 
 **Summary:**
 - The final model maintained high precision and recall on the test set, confirming its ability to accurately detect ransomware-related Bitcoin transactions while minimizing false alarms.
 - The PR AUC and ROC AUC scores further validated the robustness of the model under class imbalance conditions.
+  
+## Conclusion
+
+This project successfully demonstrated the application of machine learning techniques in detecting ransomware-related Bitcoin transactions. By analyzing real-world transaction data and evaluating multiple classification models, the study provided valuable insights into how different algorithms handle imbalanced and sensitive financial datasets.
+
+Among the models tested, **Ensemble Model 4** — which combined CatBoost, LightGBM, Random Forest, Extra Trees, and MLPClassifier as base learners with CatBoost as the meta-learner — achieved the best overall performance across multiple evaluation metrics. This model maintained high precision and recall while balancing inference time, making it a suitable candidate for real-time or near-real-time transaction monitoring systems.
+
+The results highlight the potential of ensemble learning in improving detection accuracy in cybersecurity applications, particularly within the challenging context of cryptocurrency transactions. Future work could focus on integrating unsupervised anomaly detection techniques and deploying the system into a production-like environment for continuous monitoring.
+
 
