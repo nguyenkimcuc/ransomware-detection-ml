@@ -101,9 +101,13 @@ The selected **Ensemble Model 4** was then tested on an unseen test set to asses
 
 Performance visualization included:
 - A **confusion matrix** showing true positives, true negatives, false positives, and false negatives.
+  ![image](https://github.com/user-attachments/assets/9aa7ff19-4978-4e6a-bf57-6e6ab3b8e711)
+
+- Classification Report:
+  ![image](https://github.com/user-attachments/assets/0dd2cf88-29b6-4fa3-840b-cdddeac3510f)
+
 - **Precision-Recall (PR) curve**
-- **ROC curve**
-- Bar charts summarizing Precision, Recall, F1-score, AUC-ROC, PR AUC, and Inference Time.
+  ![image](https://github.com/user-attachments/assets/3ee86abc-44c7-4b18-a6b3-e0825e30c1d6)
 
 **Summary:**
 - The final model maintained high precision and recall on the test set, confirming its ability to accurately detect ransomware-related Bitcoin transactions while minimizing false alarms.
